@@ -28,6 +28,20 @@ function generatePassword(){
     var hasUppercaseLetters  = confirm("Do you want password to have uppercase letters?");
     // are the uppercase letter/characters allowed
   }
+  // constructing passwerod based on conditions
+  var newMergedArray = [];
+
+  if(hasCharacters) newMergedArray = newMergedArray.concat(specialCharacters);
+  // if the user wants special characters
+  if(hasNumbers) newMergedArray = newMergedArray.concat(numericCharacters);
+  // if the user wants numbers
+  if(hasLowercaseLetters) newMergedArray = newMergedArray.concat(lowercaseCharacters);
+  // if the user wants lowercase characters/letters
+  if(hasUppercaseLetters) newMergedArray = newMergedArray.concat(upercaseCharacters);
+  // if the user wants uppercase characters/letters
+
+
+  
 }
 
 
