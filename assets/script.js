@@ -14,6 +14,8 @@ var upercaseCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
 
 var generateBtn = document.querySelector("#generate");
 
+
+
 // Write password to the #password input
 // adding all nessesery  base condition of a password 
 function generatePassword(){
@@ -27,7 +29,7 @@ function generatePassword(){
     // are the lowercase letter/characters allowed
     var hasUppercaseLetters  = confirm("Do you want password to have uppercase letters?");
     // are the uppercase letter/characters allowed
-  }
+  
   // constructing passwerod based on conditions
   var newMergedArray = [];
 
@@ -40,10 +42,30 @@ function generatePassword(){
   if(hasUppercaseLetters) newMergedArray = newMergedArray.concat(upercaseCharacters);
   // if the user wants uppercase characters/letters
 
+  var newPasswordArray = [];
+  //placeholder for user generated amount of length
+
+  for(var i=0; i< passwordLength; i++){
+    var randomIndex = getRandomIndex(newMergedArray.length-1)
+    var randomItemObtained = newMergedArray[randomIndex];
+    newPasswordArray.push(newMergedArray[randomIndex]);
+  }
+  // random selction fo all var
+  return newPasswordArray.join('');
+  
+  }
+  
+  else {alert("Please choose a lenghth between 8 and 128!");
+    return '';
+  } 
+  // if crateria is not fulfilleld 
 
   
 }
-
+// getting random var with data user choose if criteria is meet
+function getRandomIndex(max){
+  return Math.floor(Math.random() * Math.floor(max)); 
+}
 
 function writePassword() {
   var password = generatePassword();
@@ -55,3 +77,5 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
