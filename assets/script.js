@@ -15,6 +15,22 @@ var upercaseCharacters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
+// adding all nessesery  base condition of a password 
+function generatePassword(){
+  var passwordLength = prompt("Choose desire length of the password between 8 and 128"); 
+  if(passwordLength > 7 && passwordLength <129){
+    var hasCharacters = confirm("Do you want password to contain special charcaters?"); 
+    // are the specaial characters allowed
+    var hasNumbers = confirm("Do you want password to have numbers?");
+    // are the numbers allowed
+    var hasLowercaseLetters  = confirm("Do you want password to have lowercase letters?");
+    // are the lowercase letter/characters allowed
+    var hasUppercaseLetters  = confirm("Do you want password to have uppercase letters?");
+    // are the uppercase letter/characters allowed
+  }
+}
+
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
